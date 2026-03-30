@@ -29,6 +29,7 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-calistoga);
+  --font-calistoga: var(--font-calistoga);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);

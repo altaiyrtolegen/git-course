@@ -1,7 +1,5 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
+import { motion } from "motion/react";
 import {
   Scale,
   FileSearch,
@@ -14,7 +12,7 @@ import {
   Layers,
   BarChart3,
 } from "lucide-react";
-import { Navbar } from "@/components/layout/Navbar";
+import { Navbar } from "../components/Navbar";
 
 const features = [
   {
@@ -68,8 +66,8 @@ const stats = [
   { value: "340+", label: "Пользователей" },
 ];
 
-export default function Home() {
-  const router = useRouter();
+export function Landing() {
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-white text-[#0D2B25]">
@@ -93,7 +91,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl text-[#0D2B25] font-calistoga mb-6 tracking-tight leading-[1.1]"
+            className="text-5xl md:text-6xl lg:text-7xl text-[#0D2B25] mb-6 tracking-tight leading-tight"
           >
             Умный аудит
             <br />
@@ -117,13 +115,13 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <button
-              onClick={() => router.push("/analysis")}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium bg-[#3BBFA3] text-white hover:bg-[#2A9178] transition-all shadow-lg shadow-[#3BBFA3]/25 hover:shadow-[#3BBFA3]/40 hover:-translate-y-0.5"
+              onClick={() => navigate("/analysis")}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#3BBFA3] text-white hover:bg-[#2A9178] transition-all shadow-lg shadow-[#3BBFA3]/25 hover:shadow-[#3BBFA3]/40 hover:-translate-y-0.5"
             >
               Начать анализ
               <ArrowRight size={18} />
             </button>
-            <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium bg-[#E7F8F3] text-[#2A9178] hover:bg-[#C2EDE2] transition-all border border-[#C2EDE2]">
+            <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E7F8F3] text-[#2A9178] hover:bg-[#C2EDE2] transition-all border border-[#C2EDE2]">
               Смотреть демо
               <ChevronRight size={18} />
             </button>
@@ -146,7 +144,7 @@ export default function Home() {
                 <div className="w-3 h-3 rounded-full bg-[#C2EDE2]" />
               </div>
               <div className="flex-1 bg-[#F8FFFE] rounded-md h-6 mx-4 border border-[#E7F8F3] flex items-center px-3">
-                <span className="text-xs text-[#5A8278] font-mono">lexai.ru/analysis</span>
+                <span className="text-xs text-[#5A8278]">lexai.ru/analysis</span>
               </div>
             </div>
 
@@ -183,8 +181,7 @@ export default function Home() {
                       style={{ backgroundColor: item.bg, borderColor: item.color + "40" }}
                     >
                       <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
-                      <div className="h-2.5 rounded flex-1" style={{ backgroundColor: item.color + "30" }}>
-                        <div className={`h-full rounded ${item.w}`} style={{ backgroundColor: item.color + "60" }} />
+                      <div className="h-2.5 rounded flex-1" style={{ backgroundColor: item.color + "30", maxWidth: item.w.replace("w-", "").includes("/") ? undefined : undefined }}>
                         <span className="sr-only">{item.label}</span>
                       </div>
                     </div>
@@ -209,8 +206,8 @@ export default function Home() {
                 transition={{ delay: i * 0.08 }}
                 className="text-center"
               >
-                <div className="text-3xl font-calistoga text-[#0D2B25] mb-1">{s.value}</div>
-                <div className="text-sm font-medium text-[#5A8278]">{s.label}</div>
+                <div className="text-3xl text-[#0D2B25] mb-1">{s.value}</div>
+                <div className="text-sm text-[#5A8278]">{s.label}</div>
               </motion.div>
             ))}
           </div>
@@ -220,8 +217,8 @@ export default function Home() {
       {/* Features */}
       <section id="features" className="py-24 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <span className="text-[#3BBFA3] font-semibold text-sm uppercase tracking-widest">Возможности</span>
-          <h2 className="text-3xl md:text-4xl font-calistoga text-[#0D2B25] mt-3 mb-4">
+          <span className="text-[#3BBFA3] text-sm uppercase tracking-widest">Возможности</span>
+          <h2 className="text-3xl md:text-4xl text-[#0D2B25] mt-3 mb-4">
             Всё необходимое для правового анализа
           </h2>
           <p className="text-[#5A8278] max-w-xl mx-auto">
@@ -243,7 +240,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-xl bg-[#E7F8F3] flex items-center justify-center mb-5 group-hover:bg-[#3BBFA3] transition-colors">
                 <f.icon size={22} className="text-[#3BBFA3] group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-[#0D2B25] font-semibold mb-2">{f.title}</h3>
+              <h3 className="text-[#0D2B25] mb-2">{f.title}</h3>
               <p className="text-sm text-[#5A8278] leading-relaxed">{f.description}</p>
             </motion.div>
           ))}
@@ -254,8 +251,8 @@ export default function Home() {
       <section className="py-24 bg-[#F8FFFE] border-y border-[#C2EDE2]">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
-            <span className="text-[#3BBFA3] font-semibold text-sm uppercase tracking-widest">Процесс</span>
-            <h2 className="text-3xl md:text-4xl font-calistoga text-[#0D2B25] mt-3">Как это работает</h2>
+            <span className="text-[#3BBFA3] text-sm uppercase tracking-widest">Процесс</span>
+            <h2 className="text-3xl md:text-4xl text-[#0D2B25] mt-3">Как это работает</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
@@ -270,9 +267,9 @@ export default function Home() {
                 className="relative text-center"
               >
                 <div className="w-20 h-20 rounded-2xl bg-white border-2 border-[#3BBFA3] flex items-center justify-center mx-auto mb-6 shadow-sm">
-                  <span className="text-[#3BBFA3] font-calistoga text-2xl">{s.num}</span>
+                  <span className="text-[#3BBFA3] text-2xl">{s.num}</span>
                 </div>
-                <h3 className="text-[#0D2B25] font-semibold mb-2">{s.title}</h3>
+                <h3 className="text-[#0D2B25] mb-2">{s.title}</h3>
                 <p className="text-sm text-[#5A8278] leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
@@ -284,8 +281,8 @@ export default function Home() {
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-[#3BBFA3] font-semibold text-sm uppercase tracking-widest">Детали</span>
-            <h2 className="text-3xl md:text-4xl font-calistoga text-[#0D2B25] mt-3 mb-6">
+            <span className="text-[#3BBFA3] text-sm uppercase tracking-widest">Детали</span>
+            <h2 className="text-3xl md:text-4xl text-[#0D2B25] mt-3 mb-6">
               Полный спектр правового анализа
             </h2>
             <div className="space-y-4">
@@ -299,13 +296,13 @@ export default function Home() {
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <CheckCircle2 size={18} className="text-[#3BBFA3] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#5A8278] text-sm font-medium">{item}</span>
+                  <span className="text-[#5A8278] text-sm">{item}</span>
                 </div>
               ))}
             </div>
             <button
-              onClick={() => router.push("/analysis")}
-              className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium bg-[#3BBFA3] text-white hover:bg-[#2A9178] transition-colors shadow-md shadow-[#3BBFA3]/20"
+              onClick={() => navigate("/analysis")}
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#3BBFA3] text-white hover:bg-[#2A9178] transition-colors shadow-md shadow-[#3BBFA3]/20"
             >
               Попробовать сейчас
               <ArrowRight size={16} />
@@ -330,7 +327,7 @@ export default function Home() {
                   <item.icon size={18} className="text-[#3BBFA3]" />
                 </div>
                 <div>
-                  <h4 className="text-[#0D2B25] font-semibold text-sm mb-1">{item.title}</h4>
+                  <h4 className="text-[#0D2B25] text-sm mb-1">{item.title}</h4>
                   <p className="text-xs text-[#5A8278]">{item.desc}</p>
                 </div>
               </motion.div>
@@ -347,15 +344,15 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center bg-gradient-to-br from-[#3BBFA3] to-[#2A9178] rounded-3xl p-12 shadow-xl shadow-[#3BBFA3]/30"
         >
-          <h2 className="text-3xl md:text-4xl font-calistoga text-white mb-4">
+          <h2 className="text-3xl md:text-4xl text-white mb-4">
             Начните анализ прямо сейчас
           </h2>
           <p className="text-white/80 mb-8 text-lg">
             Загрузите любой нормативный документ и получите полный аудит за секунды.
           </p>
           <button
-            onClick={() => router.push("/analysis")}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium bg-white text-[#2A9178] hover:bg-[#E7F8F3] transition-colors shadow-lg"
+            onClick={() => navigate("/analysis")}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-[#2A9178] hover:bg-[#E7F8F3] transition-colors shadow-lg"
           >
             Открыть рабочую область
             <ArrowRight size={18} />
@@ -370,7 +367,7 @@ export default function Home() {
             <div className="w-6 h-6 rounded bg-[#3BBFA3] flex items-center justify-center">
               <Scale size={12} className="text-white" />
             </div>
-            <span className="text-sm font-medium text-[#5A8278]">LexAI © 2026</span>
+            <span className="text-sm text-[#5A8278]">LexAI © 2026</span>
           </div>
           <p className="text-xs text-[#5A8278]">
             Платформа для интеллектуального анализа нормативно-правовых актов
@@ -380,4 +377,3 @@ export default function Home() {
     </div>
   );
 }
-
