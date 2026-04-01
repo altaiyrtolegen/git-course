@@ -20,7 +20,7 @@ export function Navbar() {
             <Scale size={16} className="text-white" />
           </div>
           <span className="text-[#0D2B25] tracking-tight">
-            Lex<span className="text-[#3BBFA3]">AI</span>
+            Zan<span className="text-[#3BBFA3]">Drive</span>
           </span>
         </button>
 

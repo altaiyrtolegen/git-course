@@ -144,7 +144,7 @@ export function Landing() {
                 <div className="w-3 h-3 rounded-full bg-[#C2EDE2]" />
               </div>
               <div className="flex-1 bg-[#F8FFFE] rounded-md h-6 mx-4 border border-[#E7F8F3] flex items-center px-3">
-                <span className="text-xs text-[#5A8278]">lexai.ru/analysis</span>
+                <span className="text-xs text-[#5A8278]">zandrive.kz/analysis</span>
               </div>
             </div>
 
@@ -367,7 +367,7 @@ export function Landing() {
             <div className="w-6 h-6 rounded bg-[#3BBFA3] flex items-center justify-center">
               <Scale size={12} className="text-white" />
             </div>
-            <span className="text-sm text-[#5A8278]">LexAI © 2026</span>
+            <span className="text-sm text-[#5A8278]">ZanDrive © 2026</span>
           </div>
           <p className="text-xs text-[#5A8278]">
             Платформа для интеллектуального анализа нормативно-правовых актов

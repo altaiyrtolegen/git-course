@@ -24,7 +24,7 @@ export function Navbar() {
             <Scale size={16} className="text-white" />
           </div>
           <span className="text-[#0D2B25] tracking-tight font-medium">
-            Lex<span className="text-[#3BBFA3]">AI</span>
+            Zan<span className="text-[#3BBFA3]">Drive</span>
           </span>
         </Link>
 

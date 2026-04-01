@@ -146,7 +146,7 @@ export default function Home() {
                 <div className="w-3 h-3 rounded-full bg-[#C2EDE2]" />
               </div>
               <div className="flex-1 bg-[#F8FFFE] rounded-md h-6 mx-4 border border-[#E7F8F3] flex items-center px-3">
-                <span className="text-xs text-[#5A8278] font-mono">lexai.ru/analysis</span>
+                <span className="text-xs text-[#5A8278] font-mono">zandrive.kz/analysis</span>
               </div>
             </div>
 
@@ -370,7 +370,7 @@ export default function Home() {
             <div className="w-6 h-6 rounded bg-[#3BBFA3] flex items-center justify-center">
               <Scale size={12} className="text-white" />
             </div>
-            <span className="text-sm font-medium text-[#5A8278]">LexAI © 2026</span>
+            <span className="text-sm font-medium text-[#5A8278]">ZanDrive © 2026</span>
           </div>
           <p className="text-xs text-[#5A8278]">
             Платформа для интеллектуального анализа нормативно-правовых актов
