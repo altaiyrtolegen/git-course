@@ -39,50 +39,50 @@
 }
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #0F172A;
+  --background: #FFFFFF;
+  --foreground: #0D2B25;
   --card: #FFFFFF;
-  --card-foreground: #0F172A;
+  --card-foreground: #0D2B25;
   --popover: #FFFFFF;
-  --popover-foreground: #0F172A;
-  --primary: #0F172A;
+  --popover-foreground: #0D2B25;
+  --primary: #3BBFA3;
   --primary-foreground: #FFFFFF;
-  --secondary: #F1F5F9;
-  --secondary-foreground: #0F172A;
-  --muted: #F1F5F9;
-  --muted-foreground: #64748B;
-  --accent: #0052FF;
-  --accent-secondary: #4D7CFF;
+  --secondary: #E7F8F3;
+  --secondary-foreground: #2A9178;
+  --muted: #F8FFFE;
+  --muted-foreground: #5A8278;
+  --accent: #3BBFA3;
+  --accent-secondary: #2A9178;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FAFAFA;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #0052FF;
+  --border: #C2EDE2;
+  --input: #C2EDE2;
+  --ring: #3BBFA3;
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: #0F172A;
-  --foreground: #FAFAFA;
-  --card: #1E293B;
-  --card-foreground: #FAFAFA;
-  --popover: #1E293B;
-  --popover-foreground: #FAFAFA;
-  --primary: #FAFAFA;
-  --primary-foreground: #0F172A;
-  --secondary: #334155;
-  --secondary-foreground: #FAFAFA;
-  --muted: #334155;
+  --background: #0D2B25;
+  --foreground: #F8FFFE;
+  --card: #143A32;
+  --card-foreground: #F8FFFE;
+  --popover: #143A32;
+  --popover-foreground: #F8FFFE;
+  --primary: #3BBFA3;
+  --primary-foreground: #0D2B25;
+  --secondary: #1F5448;
+  --secondary-foreground: #F8FFFE;
+  --muted: #1F5448;
   --muted-foreground: #94A3B8;
-  --accent: #0052FF;
-  --accent-secondary: #4D7CFF;
+  --accent: #3BBFA3;
+  --accent-secondary: #2A9178;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FAFAFA;
-  --border: #334155;
-  --input: #334155;
-  --ring: #0052FF;
+  --border: #1F5448;
+  --input: #1F5448;
+  --ring: #3BBFA3;
 }
 
 @layer base {
@@ -109,6 +109,6 @@
     height: 0.75rem;
     width: 100%;
     border-radius: 0.125rem;
-    background: linear-gradient(to right, rgba(0, 82, 255, 0.15), rgba(77, 124, 255, 0.1));
+    background: linear-gradient(to right, rgba(59, 191, 163, 0.15), rgba(42, 145, 120, 0.1));
   }
 }
