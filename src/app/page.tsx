@@ -135,10 +135,6 @@ export default function Home() {
               Начать анализ
               <ArrowRight size={18} />
             </button>
-            <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium bg-[#E7F8F3] text-[#2A9178] hover:bg-[#C2EDE2] transition-all border border-[#C2EDE2]">
-              Смотреть демо
-              <ChevronRight size={18} />
-            </button>
           </motion.div>
         </div>
 
