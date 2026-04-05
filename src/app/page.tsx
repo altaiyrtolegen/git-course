@@ -72,11 +72,23 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-white text-[#0D2B25]">
+    <div className="min-h-screen bg-white text-[#0D2B25] relative overflow-x-hidden">
       <Navbar />
 
+      {/* Background Logo */}
+      <div className="absolute top-0 right-0 w-full h-full max-h-[1000px] pointer-events-none select-none z-0 flex justify-end overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, rotate: -5, scale: 0.95 }}
+          animate={{ opacity: 0.03, rotate: 0, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute -top-20 -right-40 md:-right-20 lg:right-[-10%]"
+        >
+          <Scale size={800} className="text-[#3BBFA3] w-[600px] h-[600px] md:w-[800px] md:h-[800px] lg:w-[1000px] lg:h-[1000px]" strokeWidth={1} />
+        </motion.div>
+      </div>
+
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
